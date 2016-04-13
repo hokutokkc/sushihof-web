@@ -2,5 +2,10 @@ extends skeleton
 
 block content
   h1= title
-  ul Package repository
-    li http://sushihof.de/debian 
+  ul Package Repository 
+    li: a(href="http://sushihof.de/debian/") http://sushihof.de/debian/ 
+  pre(class="code-example prettyprint"): code(class="code-example-body"): echo "deb http://sushihof.de/debian/ jessie main" >> /etc/apt/sources.list
+        | wget http://sushihof.de/debian/sushihof.gpg
+        | sudo apt-key add sushihof.gpg
+        | rm sushihof.gpg
+        | sudo apt-get update
